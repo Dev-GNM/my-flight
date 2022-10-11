@@ -6,9 +6,9 @@ class UsersController < ApplicationController
     render json: User.all, status: :ok
   end
 
-  # GET /users/1
+  # GET /users/1z
   def show
-    user = User.find_by(:id:params[:id])
+    user = User.find_by(id:params[:id]),
     if user
     render json: user, status: :ok
     else
@@ -18,12 +18,12 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    user = User.create(user_params)
+    user = User.create!(user_params)
 
     if user.valid?
       render json: user, status: :created
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -57,6 +57,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :username, :password_digest)
+      params.permit(:first_name, :last_name, :email, :username, :password_confirmation)
     end
 end
