@@ -5,6 +5,24 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+users = User.create([
+    {
+        first_name: "Luke",
+        last_name: "Morio",
+        email: "lukemorio@gmail.com",
+        username: "MoriotheG",
+        password_confirmation: "1234566"
+    },
+    {
+        first_name: "Geoffrey",
+        last_name: "Meru",
+        email: "merugeoffrey@gmail.com",
+        username: "GeoffMeru",
+        password_confirmation: "1234567"
+    }
+])
+
+
 airlines = Airline.create([
 {
     name: "United Airlines",
@@ -26,4 +44,19 @@ airlines = Airline.create([
     name: "American Airlines",
     image_url: ""
 }
+])
+
+reviews = Review.create([
+    {
+        title: 'Good Review',
+        description: 'I had a great experience with their services',
+        score: 5,
+        airline: airlines.first
+    },
+    {
+        title: 'Bad Review',
+        description: 'Their customer service is very poor',
+        score: 1,
+        airline: airlines.first
+    }
 ])
