@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+airlines = Airline.create([
+{
+    name: "United Airlines",
+    image_url: ""
+},
+{
+    name: "Southern Airlines",
+    image_url: ""
+},
+{
+    name: "Delta",
+    image_url: ""
+},
+{
+    name: "JetBlue",
+    image_url: ""
+},
+{
+    name: "American Airlines",
+    image_url: ""
+}
+])
