@@ -1,14 +1,9 @@
 import React from 'react';
 
-function Airlines() {
-
-
-  return (
-    <div>
-      This is the airlines index view for our app
-    </div>
-  );
+const Airlines = () => {
+    return <div> This is the Airlines#index view for our application.</div>
 }
 
 
-export default Airlines
+
+export default  Airlines
