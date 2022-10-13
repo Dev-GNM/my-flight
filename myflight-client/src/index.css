@@ -1,11 +1,12 @@
 *{
   margin-left: 0.5%;
   margin-right: 0.5%;
+  box-sizing: border-box;
 }
 
 .App{
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -28,6 +29,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
 
 /* Navbar */
 

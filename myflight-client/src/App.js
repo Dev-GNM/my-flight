@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 // import Nav from './components/Nav'
 // import Slider from './components/Slider'
 // import Airlines from './components/Airlines'
@@ -45,6 +46,7 @@ function App() {
            ): (
             <LoginForm Login={Login} error={error}/>
       )}
+      <RegisterForm />
     </div>
   );
 }
