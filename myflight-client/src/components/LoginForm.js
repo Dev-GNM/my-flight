@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 
     const submitHandler = e => {
         e.preventDefault();
+        e.target.reset();
 
         Login(details);
     }
@@ -14,7 +15,7 @@ import React, { useState } from 'react'
    <form onSubmit={submitHandler}>
     <div clasName="form-inner">
       <h2>Login</h2>
-      {/* {ERROR} */}
+      {(error !="") ? ( <div className="error">{error}</div> ) :""}
       <div className="form-group">
         <label htmlfor="name">Full Name:</label>
         <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} /> 
