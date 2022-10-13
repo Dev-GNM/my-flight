@@ -81,9 +81,9 @@ a {
 
 /* Slider */
 #slide-text {
-  height: 150px;
+  height: 400px;
   width: 99%;
-  background-color: rgba(78, 74, 78, 0.664);
+  background-color: rgba(243, 239, 243, 0.664);
   text-align: center;
   padding-top: 8%;
   color: rgb(10, 9, 9);

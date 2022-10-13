@@ -3,9 +3,8 @@ import React from 'react';
  function Slider() {
     return (
         <div id="slide-text">
-            <em><p>The Crypto News Hub promises to be a fair and objective portal, <br></br>
-            where viewers can find the best information, recent crypto currency news.<br></br>
-            </p></em>
+            <h2>WE HACK THE SYSTEM, YOU FLY FOR LESS</h2>
+            <em><p>Book cheap flights other sites simply can't </p></em>
         </div>
     );
 }
