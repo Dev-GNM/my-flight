@@ -1,13 +1,14 @@
 import './App.css';
-import Navlink from './components/Navlink';
-import Slider from './components/Slider';
+import  {Route, Switch } from 'react-router-dom'
+import Airlines from './Airlines/Airlines'
+import Airline from './Airline/Airline'
 
 function App() {
   return (
-    <div className="App">
-      <Navlink />
-      <Slider />
-    </div>
+<Switch>
+<Route exact path="/" component={Airlines}/>
+<Route exact path="/airlines/:slug" component={Airline}/>
+</Switch>
   );
 }
 
