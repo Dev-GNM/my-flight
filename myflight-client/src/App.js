@@ -52,7 +52,6 @@ function App() {
       <Nav />
       <Slider />
       <Airlines />
-      {/* <RegisterForm /> */}
       <NewReview />
       <Footer />
     </div>

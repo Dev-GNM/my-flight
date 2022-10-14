@@ -18,7 +18,7 @@ setFormData({...formData, [e.target.name]: e.target.value})
 
         e.target.reset();
 
-        fetch("/reviews", {
+        fetch("http://127.0.0.1:3000", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -41,10 +41,12 @@ setFormData({...formData, [e.target.name]: e.target.value})
 
 
     return (
-        <div className="new-posts-container" style={{ margin: "auto", width: '60%', height: 90 + "vh", color: "white", backgroundColor: "black", borderRadius: "15px", padding: "15px", marginTop: "5px"}}>
+        <div className="new-posts-container">
             <div className="links">
+            <h2>Manage my Reviews</h2>
             </div>
             <div className="new-post-content">
+              
 
                 <form className="new-post" onSubmit={handleSubmit}>
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import NewReview from './NewReview';
+// import NewReview from './NewReview';
 import UpdatedPost from './UpdatedPost';
 
 
@@ -38,7 +38,7 @@ setPosts(updatedPost)
                 {posts.map((post) => (
           <UpdatedPost id={post.id} key={post.id} post={post}  onDelete={handleDeletePost} />
         ))}
-            <NewReview onHandleAddPost={handleAddPost}/>
+            {/* <NewReview onHandleAddPost={handleAddPost}/> */}
             {/* <img src={fly2} /> */}
     </div>
 );

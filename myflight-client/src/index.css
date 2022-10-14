@@ -140,7 +140,13 @@ list-style: none;
   flex-direction: row;
   list-style: none;
 } */
+.post-container{
+  background-color: #f1f1f1;
+  height: 300px;
+  width: 99%;
+  color: black;
 
+}
 
 
 /* Footer */
@@ -178,6 +184,14 @@ input[type=text], textarea {
 padding: 12px;
 margin: 18px;
 border-radius: 10px;
+}
+
+
+.new-posts-container{
+  width: 99%;
+  height: 550px;
+  background-color: azure;
+  color: black;
 }
 
 

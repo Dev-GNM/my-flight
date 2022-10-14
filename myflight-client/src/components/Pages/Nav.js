@@ -9,7 +9,7 @@ function Nav() {
             <div className="nav-bar">
             <li><a href="/">Home</a></li>
             <li><a href="/">Careers</a></li>
-            <li><a href="/login">Logout</a></li> 
+            <li><a href="/form-inner">Logout</a></li> 
             </div>
             
         </nav>
