@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import RegisterForm from './components/RegisterForm'
 
  function LoginForm({ Login, error }) {
     const [details, setDetails ] = useState({name:"", email:"", password:""});
@@ -29,7 +30,9 @@ import React, { useState } from 'react'
         <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
       </div>
       <input type="submit" value="Login" />
-      <button>Create account</button>
+      <div>
+      <button type="button" class="collapsible" href="/register">Create account</button>
+      </div>
     </div>
    </form>
   )

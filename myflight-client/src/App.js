@@ -1,8 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Route, Routes } from "react-router-dom"
 import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
+import NewReview from './components/Pages/NewReview';
+// import RegisterForm from './components/RegisterForm';
 import Nav from './components/Pages/Nav'
 import Slider from './components/Pages/Slider'
 import Airlines from './components/Pages/Airlines'
@@ -39,21 +39,18 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
       {(user.email !=="") ? (
         <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
-          <button onClick={Logout}>Logout</button>
           </div>
            ): (
-            <Route path="/LoginForm" element= {<LoginForm Login={Login} error={error}/>} />
-      )} 
-      <Route path="/RegisterForm" element= {<RegisterForm />} />
-      <Route path="/" element= {<RegisterForm />} />
-      <Route path="/" element= {<Nav />} />
-      <Route path="/" element= {<Slider />} />
-      <Route path="/" element= {<Airlines />} />
-      </Routes>
+            <LoginForm Login={Login} error={error} href="/Home"/>
+      )}
+      <Nav />
+      <Slider />
+      <Airlines />
+      {/* <RegisterForm /> */}
+      <NewReview />
     </div>
   );
 }

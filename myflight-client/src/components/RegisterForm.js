@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+
 function RegisterForm({ onLogin }) {
-  // const [user, setUser] = useState("");
+  const [user, setUser] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
@@ -74,7 +75,7 @@ function RegisterForm({ onLogin }) {
           type="submit"
         />
         <a className="btn btn-link" href="/login">
-          Have an account? Login
+          Already have an account? Login
         </a>
       </form>
     </div>
