@@ -9,13 +9,13 @@ import React from 'react';
       </div>
       <div className="support">
       <h3>We love to here from you!</h3>
-      {/* <form id="contact-us">
+      <form id="contact-us">
         <input type="text" name="fname" value="First Name"/> 
         <input type="text" name="lname" value="Last Name"/>
         <input type="text" name="email" value="Email" placeholder="Email" required/>
         <textarea value="content" placeholder="Write here..."/>
         <input type="submit" value="Submit"/>
-      </form> */}
+      </form>
       <strong><p>Designed with passion by Geoffrey</p></strong>
       </div> 
      

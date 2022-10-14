@@ -6,6 +6,8 @@ import NewReview from './components/Pages/NewReview';
 import Nav from './components/Pages/Nav'
 import Slider from './components/Pages/Slider'
 import Airlines from './components/Pages/Airlines'
+import Footer from './components/Pages/Footer';
+
 
 function App() {
 
@@ -22,9 +24,10 @@ function App() {
 
     if (details.email == adminUser.email && details.password == adminUser.password) {
       console.log("Logged in");
+      // window.location.href = '/home'
       setUser({
         name: details.name,
-        email: details.email
+        email: details.email,
       });
     } else {
       console.log("Invalid logins!");
@@ -39,18 +42,19 @@ function App() {
 
   return (
     <div className="App">
-      {(user.email !=="") ? (
+      {(user.email !="") ? (
         <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
           </div>
            ): (
-            <LoginForm Login={Login} error={error} href="/Home"/>
+            <LoginForm Login={Login} error={error} href="/home"/>
       )}
       <Nav />
       <Slider />
       <Airlines />
       {/* <RegisterForm /> */}
       <NewReview />
+      <Footer />
     </div>
   );
 }
