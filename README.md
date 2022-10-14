@@ -20,9 +20,9 @@ Double click the index.html to go live/start your live server.
 Technologies used
 React-frontend
 CSS-styling
-Ruby- backend
+Ruby on Rails- backend
 Setup/Installation Requirements
-This is the live link to view my project View Quiz Board-Project.
+
 
 Known Bugs
 No known bugs as of know :) .
