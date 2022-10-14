@@ -85,6 +85,10 @@ a {
   height: 350px;
   width: 99%;
   background-color: rgba(104, 186, 192, 0.664);
+  /* background-repeat: no-repeat; */
+  background-size: auto;
+  /* background-image: url(./images/fly2.avif); */
+  opacity: 0.8;
   text-align: center;
   padding-top: 8%;
   color: rgb(10, 9, 9);
@@ -240,7 +244,7 @@ input {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  background-color: rgb(136, 133, 133);
+  background-color: rgb(255, 255, 255);
   color: rgb(5, 5, 5);
 }
 
