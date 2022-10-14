@@ -127,7 +127,7 @@ list-style: none;
 
 
 
-.movies-container {
+/* .movies-container {
   height: 750px;
 }
 
@@ -135,7 +135,7 @@ list-style: none;
   display: flex;
   flex-direction: row;
   list-style: none;
-}
+} */
 
 
 
@@ -190,7 +190,7 @@ border-radius: 10px;
 #footer{
   background-color: rgb(48, 46, 46);
   height: 550px;
-  width: 95%;
+  width: 99.5%;
   opacity: 0.9;
   color: white;
   display: flex;

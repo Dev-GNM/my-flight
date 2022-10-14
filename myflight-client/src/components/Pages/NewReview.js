@@ -46,14 +46,14 @@ setFormData({...formData, [e.target.name]: e.target.value})
             </div>
             <div className="new-post-content">
 
-                <form className="new-post" onSubmit={handleSubmit}>
+                {/* <form className="new-post" onSubmit={handleSubmit}>
 
                     <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
                     <input type="text" name="score" placeholder="score" value={formData.score} onChange={handleChange}/>
                     <button type="submit">Submit Review</button>
 
-                </form>
+                </form> */}
             </div>
         </div>
 
