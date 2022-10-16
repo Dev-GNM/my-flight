@@ -1,64 +1,26 @@
-import React, { useState } from "react";
+import React from 'react'
 
+function NewReview() {
+  return (
+    <div className='create-review'>
+        <div>
+         <form className="new-post">
 
-function NewReview({ onHandleAddPost }) {
-const [formData, setFormData] = useState ({
-    title: "",
-    description: "",
-    score: ""
-})
+<input type="text" name="title" placeholder="Review title" />
+<input type="text" name="description" placeholder="Review description"/>
+<input type="text" name="score" placeholder="score"/>
+<button type="submit">Create Review</button>
 
-function handleChange(e) {
-setFormData({...formData, [e.target.name]: e.target.value})
+</form>
+</div>
+ <div className='reviews-container'>
+    <h3>Reviews</h3>
+ </div>
+      
+    </div>
+  )
 }
 
 
-    function handleSubmit(e) {
-        e.preventDefault()
 
-        e.target.reset();
-
-        fetch("http://127.0.0.1:3000", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-            title: formData.title,
-            description: formData.description,
-            score: formData.score,
-            })
-
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                onHandleAddPost(data)
-                setFormData({...formData, title: "", description:"", score:""})
-            })
-
-        alert("New Review added successfully!");
-
-
-    }
-
-
-    return (
-        <div className="new-posts-container">
-            <div className="links">
-            <h2>Manage my Reviews</h2>
-            </div>
-            <div className="new-post-content">
-              
-
-                <form className="new-post" onSubmit={handleSubmit}>
-
-                    <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/>
-                    <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
-                    <input type="text" name="score" placeholder="score" value={formData.score} onChange={handleChange}/>
-                    <button type="submit">Submit Review</button>
-
-                </form>
-            </div>
-        </div>
-
-    )
-}
-export default NewReview;
+export default NewReview

@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-// import NewReview from './NewReview';
+import NewReview from './NewReview';
 import UpdatedPost from './UpdatedPost';
 
 
@@ -10,14 +10,13 @@ import UpdatedPost from './UpdatedPost';
 
 
   useEffect(() => {
-    fetch("/reviews")
+    fetch("/airlines")
     .then((response) => response.json())
     .then((data) =>{
       setPosts(data)
       // console.log(data)
     })
   },[]);
-
 
   function handleAddPost(newData){  
 
@@ -31,15 +30,12 @@ setPosts(updatedPost)
 }
 
 
-
-
    return (
     <div className='post-container'>
                 {posts.map((post) => (
           <UpdatedPost id={post.id} key={post.id} post={post}  onDelete={handleDeletePost} />
         ))}
-            {/* <NewReview onHandleAddPost={handleAddPost}/> */}
-            {/* <img src={fly2} /> */}
+            <NewReview onHandleAddPost={handleAddPost}/>
     </div>
 );
 }
