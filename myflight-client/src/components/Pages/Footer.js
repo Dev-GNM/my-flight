@@ -14,7 +14,7 @@ import React, { useState} from 'react';
 
 
   return (
-    <div id="footer">
+    <div className="footer">
       <div className="about-us">
       <em><p>Learn about your flight provider from your peers
       </p></em>
