@@ -179,7 +179,7 @@ list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 400px;
+  height: 500px;
   background-color: rgb(133, 181, 184, 0.664);
   width: 100%;
   padding: 15px;
