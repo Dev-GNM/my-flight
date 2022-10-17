@@ -43,17 +43,18 @@ setFormData({...formData, [e.target.name]: e.target.value})
 
 
     return (
-        <div className="new-posts-container" style={{ margin: "auto", width: '95%', height: 90 + "vh", color: "white", backgroundColor: "black", borderRadius: "15px", padding: "15px", marginTop: "5px"}}>
-            <div className="links">
-            </div>
+        <div className="new-posts-container" style={{ margin: "auto", height: 90 + "vh", color: "white", borderRadius: "15px", padding: "15px", marginTop: "5px"}}>
+            {/* <div className="links">
+            </div> */}
                 
             <div className="new-post-content">
+                <h1>Review the Airline</h1>
 
                 <form className="new-post" onSubmit={handleSubmit}>
 
                     <input type="text" name="author" placeholder="author" value={formData.author} onChange={handleChange}/>
                     <input type="text" name="Review title" placeholder="Review title" value={formData.title} onChange={handleChange}/>
-                    <input type="text" name="Review description" placeholder="topic" value={formData.description} onChange={handleChange}/>
+                    <input type="text" name="Review description" placeholder="Review description" value={formData.description} onChange={handleChange}/>
                     <input type="number" name="Review score" placeholder="Review score" value={formData.score} onChange={handleChange}/>
                     <button type="submit">Create Review</button>
                 </form>

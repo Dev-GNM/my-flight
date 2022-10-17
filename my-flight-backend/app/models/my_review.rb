@@ -1,0 +1,2 @@
+class MyReview < ApplicationRecord
+end

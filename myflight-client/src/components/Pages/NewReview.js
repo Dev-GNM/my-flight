@@ -32,7 +32,7 @@ function NewReview() {
         <div>
 </div>
  <div className='reviews-container'>
-    <h3>Reviews</h3>
+    {/* <h3>Reviews</h3> */}
  </div>
  {reviews.map((review) => (
           <Delete id={review.id} key={review.id} review={review}  onDelete={handleDeleteReview} />

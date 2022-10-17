@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :my_reviews
   root 'pages#index'
 
   namespace :api do

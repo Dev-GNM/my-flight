@@ -1,41 +1,66 @@
-import React, { useState } from 'react'
-// import RegisterForm from './components/RegisterForm'
-
- function LoginForm({ Login, error }) {
-    const [details, setDetails ] = useState({name:"", email:"", password:""});
-
-    const submitHandler = e => {
-        e.preventDefault();
-        e.target.reset();
-
-        Login(details);
-    }
+import React, { useState } from "react";
+import { Button, Error, Input, FormField, Label } from "../styles";
 
 
+function LoginForm({ onLogin }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    }).then((r) => {
+      setIsLoading(false);
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+
+  
   return (
-   <form onSubmit={submitHandler}>
-    <div clasName="form-inner">
-        <div><h2>WE HACK THE SYSTEM, YOU GET THE FLIGHT OF YOUR LIFE</h2></div>
-      {(error !="") ? ( <div className="error">{error}</div> ) :""}
-      <div className="form-group">
-        <label htmlfor="name">Full Name:</label>
-        <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} required/> 
-      </div>
-      <div className="form-group">
-        <label htmlfor="email">Email:</label>
-        <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
-      </div>
-      <div className="form-group">
-        <label htmlfor="password">Password:</label>
-        <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
-      </div>
-      <input type="submit" value="Login" />
-      <div>
-      <button type="button" class="collapsible" href="/register">Create account</button>
-      </div>
-    </div>
-   </form>
-  )
+    <form onSubmit={handleSubmit}>
+      <FormField>
+        <Label htmlFor="username">Username</Label>
+        <Input
+          type="text"
+          id="username"
+          autoComplete="off"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </FormField>
+      <FormField>
+        <Label htmlFor="password">Password</Label>
+        <Input
+          type="password"
+          id="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </FormField>
+      <FormField>
+        <Button variant="fill" color="primary" type="submit">
+          {isLoading ? "Loading..." : "Login"}
+        </Button>
+      </FormField>
+      <FormField>
+        {errors.map((err) => (
+          <Error key={err}>{err}</Error>
+        ))}
+      </FormField>
+    </form>
+  );
 }
-
-export default LoginForm
+export default LoginForm;

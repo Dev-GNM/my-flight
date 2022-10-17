@@ -178,8 +178,8 @@ list-style: none;
 .create-review{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  height: 500px;
+  justify-content: space-evenly;
+  height: 600px;
   background-color: rgb(133, 181, 184, 0.664);
   width: 100%;
   padding: 15px;
@@ -224,12 +224,12 @@ border-radius: 10px;
 }
 
 
-.new-posts-container{
+/* .new-posts-container{
   width: 99%;
   height: 550px;
   /* background-color: azure; */
-  color: black;
-}
+  /* color: black; */
+/* } */ */
 
 .review-container{
   height: 300px;
@@ -333,10 +333,11 @@ button{
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
+  color: black;
 }
 
 .post-title {
-  color: white;
+  color: rgb(15, 14, 14);
   background-color: rgb(39, 38, 38);
   border-radius: 5px;
 }

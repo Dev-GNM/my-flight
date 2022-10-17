@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import LoginForm from './components/LoginForm';
 // import RegisterForm from './components/RegisterForm';
 import Nav from './components/Pages/Nav'
@@ -8,9 +8,22 @@ import AirlineImg from './components/Pages/AirlineImg';
 import NewReview from './components/Pages/NewReview'
 // import Review from './components/Pages/Review';
 import Footer from './components/Pages/Footer';
+import Login from './components/Pages/Login';
 
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [review, setReview] = useState([]);
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+  if (!user) return <Login onLogin={setUser} />;
+
 
   // const adminUser = {
   //   email: "admin@admin.com",
@@ -53,7 +66,7 @@ function App() {
       <Nav />
       <Slider />
       <AirlineImg />
-      <NewReview />   
+      <NewReview review={review} setReview={setReview}/>   
       {/* <Review /> */}
       <Footer />
     </div>
