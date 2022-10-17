@@ -1,15 +1,15 @@
 import React from "react";
 
 
-function Delete({ onDelete, review }) {
+function Delete({ onDelete, myreview }) {
 
     function handleDeleteClick() {
-        fetch(`http://localhost:9292${review.id}`, {
+        fetch(`myreviews${myreview.id}`, {
             method: "DELETE",
         })
             .then((response) => response.json())
             .then(() => 
-                onDelete(review)
+                onDelete(myreview)
             
             )
     }
@@ -20,10 +20,10 @@ function Delete({ onDelete, review }) {
         <div>
             {/* <p> <span  type = "button" role="img" aria-label="delete">
         </span> </p> */}
-            <div><span>{review.author}</span></div>
-            <div><span>{review.title}</span></div>
-            <div><span>{review.description}</span></div>
-            <div><span>{review.score}</span>
+            <div><span>{myreview.author}</span></div>
+            <div><span>{myreview.title}</span></div>
+            <div><span>{myreview.description}</span></div>
+            <div><span>{myreview.score}</span>
             </div>
             <div>
                 <button onClick={handleDeleteClick}>Delete</button>

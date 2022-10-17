@@ -4,9 +4,9 @@ import Delete from '../Delete';
 
 function NewReview() {
 
-    const [reviews, setReviews] = useState ([]);
+    const [myreviews, setReviews] = useState ([]);
     useEffect(() => {
-        fetch("")
+        fetch("/myreviews")
         .then((response) => response.json())
         .then((data) =>{
           setReviews(data)
@@ -16,11 +16,11 @@ function NewReview() {
 
       function handleAddReview(newData){  
 
-        setReviews([...reviews, newData]) 
+        setReviews([...myreviews, newData]) 
     }
 
     function handleDeleteReview (deletedReview){
-        const updatedReview = reviews.filter((review) => review.id !== deletedReview.id)
+        const updatedReview = myreviews.filter((myreview) => myreview.id !== deletedReview.id)
         setReviews(updatedReview) 
         }
 
@@ -34,8 +34,8 @@ function NewReview() {
  <div className='reviews-container'>
     {/* <h3>Reviews</h3> */}
  </div>
- {reviews.map((review) => (
-          <Delete id={review.id} key={review.id} review={review}  onDelete={handleDeleteReview} />
+ {myreviews.map((myreview) => (
+          <Delete id={myreview.id} key={myreview.id} myreview={myreview}  onDelete={handleDeleteReview} />
         ))}
          <AddReview onHandleAddReview={handleAddReview}/>
       

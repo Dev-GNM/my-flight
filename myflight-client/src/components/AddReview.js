@@ -19,7 +19,7 @@ setFormData({...formData, [e.target.name]: e.target.value})
 
         e.target.reset();
 
-        fetch("http://localhost:9292/posts", {
+        fetch("/myreviews", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
